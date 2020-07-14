@@ -48,26 +48,26 @@ class Graph:
 
 
         
-        # create a queue to hold vertices to traverse
+        # create a queue
         queue = Queue()
 
-        # initialize queue with starting vertex
+        # initialize queue with starting node
         queue.enqueue(starting_vertex)
 
-        # create a set to keep track of visited vertices
+        # create a set to keep track of visited nodes
         visited = set()
 
         while queue.size() > 0:
 
-            # get next vertex in line
+            # get next node in line
             current_node = queue.dequeue()
 
-            # process current vertex if it hasn't been visited yet
+            # process current node if it hasn't been visited yet
             if current_node not in visited:
-                # TODO: print the current_vertex
+                # TODO: print the current_node
                 print(current_node)
 
-                # mark current vertex as visited
+                # mark current node as visited
                 visited.add(current_node)
 
                 # add all neighbors to queue
@@ -94,13 +94,13 @@ class Graph:
         # 10. add to the stack
 
 
-        # create a stack to hold vertices to traverse
+        # create a stack
         stack = Stack()
 
-        # initialize stack with starting vertex
+        # initialize stack with starting node
         stack.push(starting_vertex)
 
-        # create a set to keep track of visited vertices
+        # create a set to keep track of visited nodes
         visited = set()
         
         while stack.size() > 0:
@@ -108,11 +108,11 @@ class Graph:
             # get next node in line
             current_node = stack.pop()
 
-            # process current vertex if it hasn't been visited yet
+            # process current node if it hasn't been visited yet
             if current_node not in visited:
                 print(current_node)
 
-                # mark current vertex as visited
+                # mark current node as visited
                 visited.add(current_node)
 
                 # add all neighbors to stack
@@ -129,7 +129,21 @@ class Graph:
 
         This should be done using recursion.
         """
-        pass  # TODO
+        def dft_helper(starting_node):
+
+            if starting_node not in visited:
+                print(starting_node)
+
+                # mark current node as visited
+                visited.add(starting_node)
+
+                # process all neighboors recursively
+                for neighboor in self.get_neighbors(starting_node):
+                    dft_helper(neighboor)
+        
+        visited = set()
+
+        dft_helper(starting_node)
 
 
 
