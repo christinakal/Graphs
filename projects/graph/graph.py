@@ -81,6 +81,19 @@ class Graph:
         Print each vertex in depth-first order
         beginning from starting_vertex.
         """
+        # STEPS
+        # 1. Create a Stack
+        # 2. push on our starting node
+        # 3. make a set to track if we've been there before
+        # 4. while our stack is not empty
+        # 5. pop off whatever's on top, this is our current_node
+        # 6. if we haven't visited this node 
+        # 7. mark as visited
+        # 8. get it's neighboors
+        # 9. for each of the neighboors 
+        # 10. add to the stack
+
+        
         # create a stack to hold vertices to traverse
         vertices_to_visit = Stack()
 
