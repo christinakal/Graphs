@@ -49,30 +49,30 @@ class Graph:
 
         
         # create a queue to hold vertices to traverse
-        vertices_to_visit = Queue()
+        queue = Queue()
 
         # initialize queue with starting vertex
-        vertices_to_visit.enqueue(starting_vertex)
+        queue.enqueue(starting_vertex)
 
         # create a set to keep track of visited vertices
-        vertices_already_visited = set()
+        visited = set()
 
-        while vertices_to_visit.size() > 0:
+        while queue.size() > 0:
 
             # get next vertex in line
-            current_vertex = vertices_to_visit.dequeue()
+            current_node = queue.dequeue()
 
             # process current vertex if it hasn't been visited yet
-            if current_vertex not in vertices_already_visited:
+            if current_node not in visited:
                 # TODO: print the current_vertex
-                print(current_vertex)
+                print(current_node)
 
                 # mark current vertex as visited
-                vertices_already_visited.add(current_vertex)
+                visited.add(current_node)
 
                 # add all neighbors to queue
-                for neighbor in self.get_neighbors(current_vertex):
-                    vertices_to_visit.enqueue(neighbor)
+                for neighbor in self.get_neighbors(current_node):
+                    queue.enqueue(neighbor)
 
 
 
@@ -93,31 +93,31 @@ class Graph:
         # 9. for each of the neighboors 
         # 10. add to the stack
 
-        
+
         # create a stack to hold vertices to traverse
-        vertices_to_visit = Stack()
+        stack = Stack()
 
         # initialize stack with starting vertex
-        vertices_to_visit.push(starting_vertex)
+        stack.push(starting_vertex)
 
         # create a set to keep track of visited vertices
-        vertices_already_visited = set()
+        visited = set()
         
-        while vertices_to_visit.size() > 0:
+        while stack.size() > 0:
 
-            # get next vertex in line
-            current_vertex = vertices_to_visit.pop()
+            # get next node in line
+            current_node = stack.pop()
 
             # process current vertex if it hasn't been visited yet
-            if current_vertex not in vertices_already_visited:
-                print(current_vertex)
+            if current_node not in visited:
+                print(current_node)
 
                 # mark current vertex as visited
-                vertices_already_visited.add(current_vertex)
+                visited.add(current_node)
 
                 # add all neighbors to stack
-                for neighbor in self.get_neighbors(current_vertex):
-                    vertices_to_visit.push(neighbor)
+                for neighbor in self.get_neighbors(current_node):
+                    stack.push(neighbor)
 
 
 
