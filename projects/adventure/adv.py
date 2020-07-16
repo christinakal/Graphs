@@ -25,6 +25,19 @@ world.print_rooms()
 
 player = Player(world.starting_room)
 
+# === MY CODE ===
+stack = Stack()
+
+
+
+
+
+
+
+
+
+
+
 # Fill this out with directions to walk
 # traversal_path = ['n', 'n']
 traversal_path = []
