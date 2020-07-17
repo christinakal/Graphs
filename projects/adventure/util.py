@@ -13,3 +13,18 @@ class Stack():
 
     def size(self):
         return len(self.stack)
+
+
+# Find the opposite direction
+
+def opp_dir(direction):
+    if direction == 'n':
+        return 's'
+    elif direction == 's':
+        return 'n'
+    elif direction == 'w':
+        return 'e'
+    elif direction == 'e':
+        return 'w'
+    else:
+        print('===== An unexpected error has occurred with opp_dir(). =====')
