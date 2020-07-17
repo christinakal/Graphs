@@ -1,0 +1,10 @@
+NOTES
+
+- Traverse the entire graph
+- Construct traversal graph for traversal_path, a list of moves
+    {
+        0: {'n': 4, 's': '?', 'e': '?'}
+    }   
+- Basically this is a dictionary
+- Complete traversal is 500 entries and no '?'
+- Choose dfs because it will have less backtracking
