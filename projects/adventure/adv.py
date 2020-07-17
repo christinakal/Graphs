@@ -113,8 +113,8 @@ while s.size() > 0:
                 if room == '?':
                     #  pleaaaaase work!!!!!!!!!
                     distance = abs(player.current_room.get_coords()[0] - 3) + abs(player.current_room.get_coords()[0] - 5)
-                    print(f"COORDINATES_1:{player.current_room.get_coords()[0]}"
-                    print(f"COORDINATES_2:{player.current_room.get_coords()[0]}"
+                    # print(f"COORDINATES_1:{player.current_room.get_coords()[0]}"
+                    # print(f"COORDINATES_2:{player.current_room.get_coords()[0]}"
                     # example: 11-3 + 11-5 -> 8 + 6 -> 14
 
                     neighbors[(player.current_room.id, direction)] = distance
