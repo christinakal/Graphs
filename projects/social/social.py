@@ -1,3 +1,19 @@
+import random
+from random_names import create_random_name
+
+class Queue():
+    def __init__(self):
+        self.queue = []
+    def enqueue(self, value):
+        self.queue.append(value)
+    def dequeue(self):
+        if self.size() > 0:
+            return self.queue.pop(0)
+        else:
+            return None
+    def size(self):
+        return len(self.queue)
+
 class User:
     def __init__(self, name):
         self.name = name
@@ -45,8 +61,37 @@ class SocialGraph:
         # !!!! IMPLEMENT ME
 
         # Add users
+        for i in range(1, num_users + 1):
+            self.add_user(create_random_name())
 
         # Create friendships
+        # Generate pairs of IDs to make friendships
+        total_friendships = round(avg_friendships * num_users / 2)
+
+        friendships_to_create = set()
+
+        while len(friendships_to_create) < total_friendships:
+
+            user1ID = random.randrange(1, num_users + 1)
+            user2ID = random.randrange(1, num_users + 1)
+            
+            # pick a different user ID for user2
+            while user1ID == user2ID:
+                user2ID = random.randrange(1, num_users + 1)
+
+            # ensure that the same two IDs are not added twice, such as (6, 4) and (4, 6)
+            smallerID = user1ID if user1ID < user2ID else user2ID
+            largerID = user1ID if user1ID > user2ID else user2ID
+
+            friendships_to_create.add((smallerID, largerID))
+
+        # create friendships
+        for friendship in friendships_to_create:
+
+            user1ID, user2ID = friendship
+            self.add_friendship(user1ID, user2ID)
+        
+        print(f"\nSuccessfully populated graph with {num_users} users, each with an average of {avg_friendships} friendships.\n")
 
     def get_all_social_paths(self, user_id):
         """
